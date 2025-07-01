@@ -1,0 +1,44 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String
+  createdAt DateTime @default(now())
+}
+
+model Kelas {
+  id        String       @id @default(uuid())
+  nama      String
+  wali      String
+  mahasiswa Mahasiswa[]
+}
+
+model Mahasiswa {
+  id        String     @id @default(uuid())
+  nama      String
+  nim       String     @unique
+  kelasId   String
+  kelas     Kelas      @relation(fields: [kelasId], references: [id])
+  nilai     Nilai[]
+}
+
+model Nilai {
+  id           String     @id @default(uuid())
+  mataKuliah   String
+  nilai        Float
+  huruf        String
+  mahasiswaId  String
+  mahasiswa    Mahasiswa  @relation(fields: [mahasiswaId], references: [id])
+}
+
