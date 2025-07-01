@@ -7,6 +7,7 @@ Sistem backend REST API untuk mengelola data Mahasiswa, Kelas, dan Nilai menggun
 * **JWT Authentication**
 * **Joi Validation**
 * **Domain Driven Design (DDD)**
+* **Insomnia Collection** untuk dokumentasi & testing
 
 ---
 
@@ -17,6 +18,7 @@ Sistem backend REST API untuk mengelola data Mahasiswa, Kelas, dan Nilai menggun
 * CRUD Mahasiswa (relasi ke Kelas)
 * CRUD Nilai (relasi ke Mahasiswa)
 * Validasi UUID dan Role-based Authorization
+* Insomnia export YAML untuk pengujian langsung
 
 ---
 
@@ -113,28 +115,31 @@ npm run dev
 
 ---
 
-## 🧪 Contoh Login
+## 🧪 Pengujian API via Insomnia
 
-```json
-{
-  "email": "admin@admin.com",
-  "password": "admin123"
-}
+1. Buka Insomnia → `Import` → `From File`
+2. Pilih file `insomnia_export.yaml`
+3. Cek folder:
+
+   * **AUTH Request** → register, login
+   * **Mahasiswa CRUD**
+   * **Kelas CRUD**
+   * **Nilai CRUD**
+4. Setelah login, ambil `token` dan set di Authorization header setiap request
+
+### Contoh header:
+
+```
+Authorization: Bearer <TOKEN>
+Content-Type: application/json
 ```
 
 ---
 
 ## 🛡️ Role Protection
 
-* Hanya `ADMIN` yang bisa akses POST/PUT/DELETE endpoint
-* Semua route wajib `requireAuth`
-
----
-
-## ✅ Validasi
-
-* UUID format divalidasi middleware
-* Joi digunakan untuk body validation pada setiap endpoint
+* Hanya `ADMIN` yang bisa akses POST/PUT/DELETE
+* Semua route dilindungi `requireAuth`
 
 ---
 

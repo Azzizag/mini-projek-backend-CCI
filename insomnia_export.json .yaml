@@ -1,0 +1,538 @@
+type: collection.insomnia.rest/5.0
+name: Mini-Projek-CCI-2025
+meta:
+  id: wrk_1f7919106481411cb2dd8e5d67dc8ade
+  created: 1751348858583
+  modified: 1751348858583
+  description: ""
+collection:
+  - name: AUTH Request
+    meta:
+      id: fld_50143e8b76504a7dbb4efd9c59aa3025
+      created: 1751348877804
+      modified: 1751348877804
+      sortKey: -1751348877804
+      description: ""
+    children:
+      - url: "{{ Base_URL }}/auth/register"
+        name: Auth-Register
+        meta:
+          id: req_0e9d62ecfa3844baabc1bf71060a0e3b
+          created: 1751348881253
+          modified: 1751354481305
+          isPrivate: false
+          description: ""
+          sortKey: -1751348883535
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "email": "admin2@admin.com",
+              "password": "admin123",
+              "role": "ADMIN"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/auth/login"
+        name: Auth-Login
+        meta:
+          id: req_97fa8e73d7ff4d6982956efeca009994
+          created: 1751348972207
+          modified: 1751355960582
+          isPrivate: false
+          description: ""
+          sortKey: -1751348883635
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "email": "admin@admin.com",
+              "password": "admin123"
+            }
+
+
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Mahasiswa CRUD
+    meta:
+      id: fld_e9ee46d7027841878024d69eaa3fd758
+      created: 1751354118758
+      modified: 1751354118758
+      sortKey: -1751354118758
+      description: ""
+    children:
+      - url: "{{ Base_URL }}/mahasiswa"
+        name: GET-Mahasiswa
+        meta:
+          id: req_802a1ebf3a3f4cf8bcf39b625b8a6902
+          created: 1751354145249
+          modified: 1751359472506
+          isPrivate: false
+          description: ""
+          sortKey: -1751354162478.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTEzNTUxOTksImV4cCI6MTc1MTQ0MTU5OX0.nmdEReVqTUkZu2U4Btytoobv7D6p9ca3uc-i3U5k7gU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/mahasiswa/f1f21f75-2312-4f1a-a490-b9e62c33fc9e"
+        name: GET-MahasiswabyId
+        meta:
+          id: req_2157be4cd724425f8e96b315ddafd009
+          created: 1751354167840
+          modified: 1751359508991
+          isPrivate: false
+          description: ""
+          sortKey: -1751354162466
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.Base_URL }}/mahasiswa"
+        name: POST-Mahasiswa
+        meta:
+          id: req_49d46e7a76134ed2a46d40576ddc8ff8
+          created: 1751354189034
+          modified: 1751359456921
+          isPrivate: false
+          description: ""
+          sortKey: -1751354162366
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nama": "Ahmad",
+              "nim": "1202201002",
+              "kelasId": "155565ae-583a-4a48-86ea-5de9b4b88b1d"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.Base_URL }}/mahasiswa/93a437a2-4c6f-4642-8971-6e920cefda36"
+        name: PUT-Mahasiswa
+        meta:
+          id: req_5a2dd61b4c204068b7cc132d0208ea98
+          created: 1751354231154
+          modified: 1751359643215
+          isPrivate: false
+          description: ""
+          sortKey: -1751351523000.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nama": "aris",
+              "nim": "1202201002"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/mahasiswa/93a437a2-4c6f-4642-8971-6e920cefda36"
+        name: DELETE-Mahasiswa
+        meta:
+          id: req_0d0e0804dca84b33845f9d2c9fcd271a
+          created: 1751356365615
+          modified: 1751359678085
+          isPrivate: false
+          description: ""
+          sortKey: -1751351522900.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Kelas CRUD
+    meta:
+      id: fld_1114393a083447af8890551c80f2e62c
+      created: 1751356283481
+      modified: 1751356283481
+      sortKey: -1751356283481
+      description: ""
+    children:
+      - url: "{{ Base_URL }}/kelas"
+        name: GET-Kelas
+        meta:
+          id: req_b744b57ea47247a688ff2e205161fe91
+          created: 1751356313250
+          modified: 1751359210635
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317770
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/kelas/7066f848-263e-4be4-8fae-b71660f2a038"
+        name: GET-KelasbyId
+        meta:
+          id: req_a024e99419f84ea0ace559960d245881
+          created: 1751356327648
+          modified: 1751359242383
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317670
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.Base_URL }}/kelas"
+        name: POST-Kelas
+        meta:
+          id: req_360a45cec60d48068b9ccbdf2fb99fce
+          created: 1751356382259
+          modified: 1751359159179
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317570
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nama": "TI-02",
+              "wali": "Pak Kiba"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.Base_URL }}/kelas/7066f848-263e-4be4-8fae-b71660f2a038"
+        name: PUT-Kelas
+        meta:
+          id: req_d0fc32f4975b4c559694224264cee2b5
+          created: 1751356394489
+          modified: 1751359297855
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317470
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nama": "TI-02",
+              "wali": "Bu Fika"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/kelas/7066f848-263e-4be4-8fae-b71660f2a038"
+        name: DELETE-Kelas
+        meta:
+          id: req_6279afe7b3924d9a95fff93b5e7dd798
+          created: 1751356411626
+          modified: 1751359334202
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317370
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Nilai CRUD
+    meta:
+      id: fld_ee374637b42146789200e8e7afba2da4
+      created: 1751356428993
+      modified: 1751356428993
+      sortKey: -1751355201119.5
+      description: ""
+    children:
+      - url: "{{ _.Base_URL }}/nilai"
+        name: POST-Nilai
+        meta:
+          id: req_1ecf85a9770644df93762561d3d5bbf1
+          created: 1751356428995
+          modified: 1751360177106
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317570
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "mataKuliah": "Kalkulus",
+              "nilai": 100,
+              "huruf": "A",
+              "mahasiswaId": "f1f21f75-2312-4f1a-a490-b9e62c33fc9e"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/nilai/5529bcbd-1f60-4d0f-9805-ade7dacd3eba"
+        name: GET-NilaibyId
+        meta:
+          id: req_460c0010cfdb457bb4cc43a11b1b1024
+          created: 1751356428995
+          modified: 1751360191546
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317670
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/nilai"
+        name: GET-Nilai
+        meta:
+          id: req_ec6f87c8982d409884463f22e3afb1e9
+          created: 1751356428995
+          modified: 1751356555274
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317770
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTEzNTUxOTksImV4cCI6MTc1MTQ0MTU5OX0.nmdEReVqTUkZu2U4Btytoobv7D6p9ca3uc-i3U5k7gU
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ Base_URL }}/nilai/5529bcbd-1f60-4d0f-9805-ade7dacd3eba"
+        name: DELETE-Nilai
+        meta:
+          id: req_2ea714d1f8d24185acf4e3f0c2a8034e
+          created: 1751356428996
+          modified: 1751360278004
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317370
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.Base_URL }}/nilai/5529bcbd-1f60-4d0f-9805-ade7dacd3eba"
+        name: PUT-Nilai
+        meta:
+          id: req_f98cc383c2f64a7b9efa2601278b55dc
+          created: 1751356428996
+          modified: 1751360209726
+          isPrivate: false
+          description: ""
+          sortKey: -1751356317470
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "mataKuliah": "Backend",
+              "nilai": 85,
+              "huruf": "AB"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxZmI3ZmQ1LWU1OWYtNGI4YS1hOGFlLTgyZjg2ZjVlODZmYSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzUxMzU5MDk5LCJleHAiOjE3NTE0NDU0OTl9.ZBZGfviBkwRU6TA6WA8kLjAtFb6CBk_W_RdS_RvEaoM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_4d1492dbe9ba2031f0bb15e1d1ff2f0c0407f82f
+    created: 1751348858584
+    modified: 1751348858584
+environments:
+  name: Base Environment
+  meta:
+    id: env_4d1492dbe9ba2031f0bb15e1d1ff2f0c0407f82f
+    created: 1751348858584
+    modified: 1751360300598
+    isPrivate: false
+  data:
+    Base_URL: http://localhost:3000
+    TOKEN: ""
